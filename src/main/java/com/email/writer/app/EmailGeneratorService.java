@@ -2,6 +2,7 @@ package com.email.writer.app;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -13,13 +14,14 @@ public class EmailGeneratorService
 {
     private final WebClient webClient;
 
-//     @Value("${gemini.api.url}")
-//    private String geminiApiUrl;
-//
-//    @Value("${gemini.api.url}")
-//    private String geminiApiKey;
+     @Value("${gemini.api.url}")
+    private String geminiApiUrl;
 
-    public EmailGeneratorService(WebClient.Builder webClientBuilder) {
+    @Value("${gemini.api.key}")
+    private String geminiApiKey;
+
+    public EmailGeneratorService(WebClient.Builder webClientBuilder)
+    {
         this.webClient = webClientBuilder.build();
     }
 
@@ -40,7 +42,7 @@ public class EmailGeneratorService
         );
         // Do request and get response
         String response = webClient.post()
-                .uri("https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=AIzaSyBfEk6XO52snOGoQYBwvDvchYxwwNztMSY")
+                .uri(geminiApiUrl + geminiApiKey)
                 .header("Content-Type","application/json")
                 .bodyValue(requestBody)
                 .retrieve()

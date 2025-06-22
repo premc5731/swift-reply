@@ -6,6 +6,7 @@ import lombok.Data;
 public class EmailRequest
 {
     private  String emailContent;
+    private String tone;
 
     public String getEmailContent() {
         return emailContent;
@@ -23,5 +24,5 @@ public class EmailRequest
         this.tone = tone;
     }
 
-    private String tone;
+
 }

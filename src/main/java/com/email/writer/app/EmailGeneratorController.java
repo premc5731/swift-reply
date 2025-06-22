@@ -11,7 +11,8 @@ public class EmailGeneratorController
 {
     private  final EmailGeneratorService emailGeneratorService;
 
-    public EmailGeneratorController(EmailGeneratorService emailGeneratorService) {
+    public EmailGeneratorController(EmailGeneratorService emailGeneratorService)
+    {
         this.emailGeneratorService = emailGeneratorService;
     }
 
