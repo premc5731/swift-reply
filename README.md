@@ -114,7 +114,7 @@ Or in IntelliJ: Run the `EmailWriterApplication.java` class
 
 > Add your screenshots here:
 - ✉ Gmail Compose with AI Reply button
-![screenshot](Screenshots/Reply_button.png)
+![screenshot](Screenshots/Reply_Button.png)
 
 ---
 
