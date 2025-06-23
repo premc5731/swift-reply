@@ -110,13 +110,11 @@ Or in IntelliJ: Run the `EmailWriterApplication.java` class
 
 ---
 
-### 📸 Screenshots
+### Screenshots
 
 > Add your screenshots here:
 - ✉ Gmail Compose with AI Reply button
 ![screenshot](Screenshots/Reply_button.png)
-
-- ⚙ Spring Boot log showing API integration
 
 ---
 
