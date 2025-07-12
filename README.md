@@ -10,37 +10,37 @@
 
 ### Description
 
-**AI Email Reply Generator** is a powerful productivity tool that combines a Spring Boot backend with a Chrome extension to help you write **AI-generated email replies** directly inside **Gmail**.
+**AI Email Reply Generator** is a productivity tool that combines a Spring Boot backend and a Chrome extension to help you write **AI-generated email replies** directly inside **Gmail**.
 
-Powered by Google Gemini API  
-Supports custom tone like `friendly`, `professional`, `casual`  
-No need to copy/paste – reply is inserted directly into Gmail's compose box
+- Powered by Google Gemini API  
+- Supports tones like `friendly`, `professional`, `casual`  
+- No need to copy/paste – reply is inserted into Gmail's compose box
 
 ---
 
 ### Tech Stack
 
-| Layer          | Technology            |
-|----------------|------------------------|
-| Frontend       | Chrome Extension (JavaScript) |
-| Backend        | Spring Boot (Java 17)         |
-| AI Integration | Google Gemini (Generative Language API) |
-| Communication  | REST API via WebClient        |
+| Layer          | Technology                        |
+|----------------|------------------------------------|
+| Frontend       | Chrome Extension (JavaScript)      |
+| Backend        | Spring Boot (Java 17)              |
+| AI Integration | Google Gemini (Generative API)     |
+| Communication  | REST API via WebClient             |
 
 ---
 
 ### How It Works
 
-1. The Chrome extension detects when you open the Gmail compose window.
-2. It injects an `AI Reply` button into Gmail's toolbar.
-3. When clicked, it:
-   - Captures the original email content
-   - Sends it to the Spring Boot backend
+1. Chrome extension detects Gmail compose window.
+2. Injects `AI Reply` button into Gmail's toolbar.
+3. On click:
+   - Captures original email content
+   - Sends to Spring Boot backend
 4. Spring Boot:
-   - Builds a natural language prompt
-   - Sends the request to Gemini API
-   - Parses and returns the AI-generated reply
-5. The Chrome extension inserts the reply directly into Gmail's compose box.
+   - Builds prompt
+   - Sends request to Gemini API
+   - Returns generated reply
+5. Reply is inserted into Gmail compose box.
 
 ---
 
@@ -72,22 +72,21 @@ cd ai-email-writer
 
 #### ✅ 2. Set Up the Backend (Spring Boot)
 
-- Set the following in your `application.properties`:
+In `application.properties`:
 
 ```properties
 GEMINI_URL=https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent
 GEMINI_KEY=your_api_key_here
 ```
 
-> You can also set them as environment variables: `GEMINI_URL`, `GEMINI_KEY`
+Or set environment variables: `GEMINI_URL`, `GEMINI_KEY`
 
-- Then run the Spring Boot app:
+Then run:
 
 ```bash
 ./mvnw spring-boot:run
 ```
-
-Or in IntelliJ: Run the `EmailWriterApplication.java` class
+Or run `EmailWriterApplication.java` in IntelliJ.
 
 ---
 
@@ -96,40 +95,61 @@ Or in IntelliJ: Run the `EmailWriterApplication.java` class
 - Open Chrome → `chrome://extensions/`
 - Enable **Developer mode**
 - Click **Load unpacked**
-- Select the `chrome-extension` folder
+- Select `chrome-extension` folder
 
 ---
 
 ### Test Flow
 
 1. Go to Gmail → Click **Compose**
-2. You’ll see an **“AI Reply”** button
-3. Click it → The extension fetches the reply from the backend
-4. The AI-generated reply appears in your Gmail compose box
+2. Click **“AI Reply”** button
+3. Extension fetches reply from backend
+4. Reply appears in Gmail compose box
+
+---
+
+### Downloads (JAR & Extension)
+
+Check the `downloads/` folder:
+
+| File                          | Purpose                            |
+|-------------------------------|------------------------------------|
+| `email-writer-backend.jar`    | Executable Spring Boot backend JAR |
+| `email-extension.zip`         | Chrome extension (zipped folder)   |
+
+####  How to Use
+
+1. **Run Backend**:
+```bash
+java -jar downloads/email-writer-backend.jar
+```
+
+2. **Load Extension**:
+- Unzip `email-extension.zip`
+- Go to Chrome → `chrome://extensions/`
+- Click **Load unpacked** and select unzipped folder
 
 ---
 
 ### Screenshots
 
-> Add your screenshots here:
-- ✉ Gmail Compose with AI Reply button
-![screenshot](https://raw.githubusercontent.com/premc5731/AI-Email-Reply-Chrome-Extension/main/Screenshots/Reply_button.png
-)
+> ✉ Gmail Compose with AI Reply button  
+![screenshot](https://raw.githubusercontent.com/premc5731/AI-Email-Reply-Chrome-Extension/main/Screenshots/Reply_button.png)
 
 ---
 
-### To-Do / Future Improvements
+### To-Do / Future Enhancements
 
-- Add support for multiple tones via dropdown
-- UI enhancements using Material UI in popup
-- OAuth integration for Gmail auth
-- Store logs or reply history
+- Tone selector dropdown (UI)
+- Add Material UI popup
+- Gmail OAuth login
+- Reply history/logs
 
 ---
 
 ### Disclaimer
 
-This tool uses **Google Gemini API**. You must have your own API key and comply with their terms of use.
+Uses Google Gemini API. Requires your own API key. Follow Google's API terms.
 
 ---
 
