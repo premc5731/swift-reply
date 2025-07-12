@@ -5,7 +5,6 @@
 ![Spring Boot](https://img.shields.io/badge/SpringBoot-3.2-green?logo=spring)  
 ![Chrome Extension](https://img.shields.io/badge/Chrome%20Extension-enabled-brightgreen?logo=googlechrome)  
 ![API](https://img.shields.io/badge/Backend-REST%20API-orange)  
-![License](https://img.shields.io/badge/License-MIT-lightgrey)
 
 ---
 
