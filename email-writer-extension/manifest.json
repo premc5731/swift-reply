@@ -6,7 +6,8 @@
   "permissions": ["storage", "activeTab"],
   "host_permissions": [
     "http://localhost:8080/*",
-    "*://mail.google.com/*"
+    "*://mail.google.com/*",
+    "https://aireply.duckdns.org/*"
   ],
   "content_scripts": [
     {

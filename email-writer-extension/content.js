@@ -70,10 +70,11 @@ function injectButton() {
             button.disabled = true;
 
             const emailContent = getEmailContent();
-            const response = await fetch('http://localhost:8080/api/email/generate', {
+            const response = await fetch('https://aireply.duckdns.org/api/email/generate', {
+
                 method: 'POST',
                 headers: {
-                    'content-Type': 'application/json',
+                    'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
 
