@@ -10,7 +10,7 @@
 
 ### Description
 
-**AI Email Reply Generator** is a productivity tool that combines a Spring Boot backend and a Chrome extension to help you write **AI-generated email replies** directly inside **Gmail**.
+**swift-reply** is a productivity tool that combines a Spring Boot backend and a Chrome extension to help you write **AI-generated email replies** directly inside **Gmail**.
 
 - Powered by Google Gemini API  
 - Supports tones like `friendly`, `professional`, `casual`  
@@ -66,8 +66,8 @@
 #### ✅ 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/ai-email-writer.git
-cd ai-email-writer
+git clone https://github.com/premc5731/swift-reply.git
+cd swift-reply
 ```
 
 #### ✅ 2. Set Up the Backend (Spring Boot)
