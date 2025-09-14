@@ -1,5 +1,5 @@
 
-# Swift-Reply AI-Powered Email Assistant (Chrome Extension)
+# Swift-Reply - AI-Powered Email Assistant (Chrome Extension)
 
 ![Java](https://img.shields.io/badge/Java-17-blue?logo=java)  
 ![Spring Boot](https://img.shields.io/badge/SpringBoot-3.2-green?logo=spring)  
