@@ -16,7 +16,18 @@ pipeline {
         }
         stage('Deploy Application') {
             steps {
-                bat 'java -jar target/*.jar'
+                script {
+                    def files = findFiles(glob: 'target/*.jar')
+                    
+                    if (files.size() > 0) {
+                        def jarPath = files[0].path
+                        echo "Attempting to run ${jarPath}"
+                        
+                        bat "java -jar ${jarPath}"
+                    } else {
+                        error "No .jar file found in target directory to deploy."
+                    }
+                }
             }
         }
     }
